@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--ref freecodecamp.org -->
+    <title>Students Page</title>
+    <meta name="students page" content="displays data from collegedb database.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Students</h1>
+
+        <!-- table from collegedb -->
+        <table>
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>GPA</th>
+                <th>Action</th>
+            </tr>
+    
+            <!-- ejs script -->
+            <% students.forEach((student)=> { %>
+                <tr>
+                    <td>
+                        <%= student.sid %>
+                    </td>
+                    <td>
+                        <%= student.name %>
+                    </td>
+                    <td>
+                        <%= student.gpa %>
+                    </td>
+    
+                    <td><a href="/listStudents">Delete</a></td>
+                </tr>
+                <% }) %>
+        <!-- Link Back to home -->
+        <a href="/">Home</a>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--ref sitpoint.com -->
+    <title>Lecturers Page</title>
+    <meta name="Lectures page" content="displays data from mongoDB database.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lecturers Page</h1>
+
+    <button type="button" onClick='location.href="/"'>Add Lecturer</button><br><br>
+        <!-- table from collegedb -->
+        <table>
+            <tr>
+                <th>Lecturer ID</th>
+                <th>Name</th>
+                <th>Dept</th>
+            </tr>
+    
+            <!-- ejs script -->
+            <% lecturers.forEach((lecturer)=> { %>
+                <tr>
+                    <td>
+                        <%= lecturer._id %>
+                    </td>
+                    <td>
+                        <%= lecturer.name %>
+                    </td>
+                    <td>
+                        <%= lecturer.dept %>
+                    </td>
+                </tr>
+                <% }) %>
+        </table>
+    <a href="/">Home</a>
+
+</body>
+
+</html>

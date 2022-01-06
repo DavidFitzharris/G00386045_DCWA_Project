@@ -1,0 +1,28 @@
+{
+  "name": "finalproject",
+  "version": "1.0.0",
+  "description": "Final project for Data Centric Web Applications module year 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidFitzharris/G00386045_DCWA_Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidFitzharris/G00386045_DCWA_Project/issues"
+  },
+  "homepage": "https://github.com/DavidFitzharris/G00386045_DCWA_Project#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "mongodb": "^4.2.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.15",
+    "promise-mysql": "^5.0.4"
+  }
+}
