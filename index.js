@@ -66,6 +66,12 @@ app.get('/listLecturers', (req,res) => {
 //lecturers view
 app.get('/listStudents', (req,res) => {
 	//res.sendFile(__dirname + "/views/students.ejs");
-
-	res.render("students");
+	sqlDAO.getStudents()
+	.then((result) => {
+		console.log(result)
+		res.render("students", { students: result })
+	})
+	.catch((error) => {
+		res.send(error)
+	})
 })

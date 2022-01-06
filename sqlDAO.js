@@ -17,6 +17,7 @@ mysql.createPool({
 	console.log(error)
 })
 
+//get modules from collegedb
 var getModules = () => {
 	return new Promise((resolve, reject) => {
 		pool.query('select * from module')
@@ -30,4 +31,18 @@ var getModules = () => {
 	})
 }
 
-module.exports = {getModules};
+//Get students from collegedb
+var getStudents = () => {
+	return new Promise((resolve, reject) => {
+		pool.query('select * from student')
+		.then((result) => {
+            console.log("Getting student table..")
+			resolve(result)
+		})
+		.catch((error) => {
+			reject(error)
+		})
+	})
+}
+
+module.exports = {getModules,getStudents};
