@@ -119,6 +119,21 @@ app.get('/listLecturers', (req, res) => {
 		})
 })
 
+app.get('/addLecturer', (req, res) => {
+	res.render("addLecturer")
+})
+
+app.post('/addLecturer', (req, res) => {
+	console.log("Adding lecturer")
+	mongoDAO.addLecturer(req.body._id, req.body.name, req.body.dept)
+	.then((result) => {
+		res.send("OK")
+	})
+	.catch((error) => {
+		res.send("NOK")
+	})
+})
+
 //****************************Students*******************//
 //lecturers view
 app.get('/listStudents', (req, res) => {
@@ -132,3 +147,19 @@ app.get('/listStudents', (req, res) => {
 			res.send(error)
 		})
 })
+
+app.get('/addStudent', (req, res) => {
+	res.render("addStudent")
+})
+
+app.post('/addStudent', (req, res) => {
+	console.log("Adding student")
+	sqlDAO.addStudent(req.body.sid, req.body.name, req.body.gpa)
+	.then((result) => {
+		res.send("OK")
+	})
+	.catch((error) => {
+		res.send("NOK")
+	})
+})
+

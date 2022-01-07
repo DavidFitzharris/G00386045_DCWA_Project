@@ -84,7 +84,7 @@ var getStudents = () => {
 var getStudentByMID = (mid) => {
 	return new Promise((resolve, reject) => {
 		let query = {
-			sql: "select * from student s left join student_module m on s.sid = m.sid where m.mid = ?",
+			sql: "select * from student s left join student_module m on s.sid = m.sid where m.mid = ?;",
 			values: [mid]
 		} 
 		pool.query(query)
@@ -97,4 +97,21 @@ var getStudentByMID = (mid) => {
 	})
 }
 
-module.exports = { getModules, getStudents, getModID, setModule, getStudentByMID };
+var addStudent = (sid, name, gpa) => {
+	return new Promise((resolve, reject) => {
+		let query = {
+			sql: `insert into student (sid, name, gpa) values ('?','?',?);`,
+			values: [sid, name, gpa]
+		} 
+		.then((result) => {
+			console.log("Added")
+			resolve(result)
+		})
+		.catch((error) => {
+			console.log("Not added")
+			reject(error)
+		})
+	})
+}
+
+module.exports = { getModules, getStudents, getModID, setModule, getStudentByMID, addStudent };
