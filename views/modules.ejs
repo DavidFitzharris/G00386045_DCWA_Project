@@ -43,11 +43,11 @@
                     <%= module.credits %>
                 </td>
 
-                <td><a href="/listModules">Edit</a></td>
-                <td><a href="/listModules">List</a></td>
+                getting modul ID selected 
+                <td><a href="/modules/edit/<%= module.mid %>">Edit</a></td>
+                <td><a href="/modules/students/<%= module.mid %>">List</a></td>
             </tr>
             <% }) %>
-
     </table>
 
     <!-- Link Back to home -->

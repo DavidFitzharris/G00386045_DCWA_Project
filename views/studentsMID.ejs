@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--ref freecodecamp.org -->
+    <title>Students MID Page</title>
+    <meta name="modules page" content="displays data from collegedb database.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Students studying <%= mid %></h1>
+
+    <!-- table using collegedb and sqlDAO.getStudentByMID  -->
+	<table>
+		<tr>
+			<th>Student ID</th>
+			<th>Name</th>
+			<th>GPA</th>
+		</tr>
+		<% students.forEach((student) => { %>
+			<tr>
+                <td>
+                    <%= student.sid %>
+                </td>
+                <td>
+                    <%= student.name %>
+                </td>
+                <td>
+                    <%= student.gpa %>
+                </td>
+			</tr>
+		<% }) %>
+	</table>
+
+    <!-- Link Back to home -->
+    <a href="/">Home</a>
+
+</body>
+
+</html>

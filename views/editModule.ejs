@@ -12,8 +12,22 @@
 
 <body>
     <h1>Edit Module</h1>
-    <!-- list with links -->
 
+    <form>
+        <form action="/modules/edit/<%= mid %>" method="POST">
+            <label>Module ID:</label><br />
+            <input disabled type="text" name="id" value="<%= mid %>"" ><br/>
+            <label>Name(min 5 Char):</label><br/>
+            <input type=" text" name="name" value="<%= name %>"" ><br/>
+            <label>Credits(5,10,15):</label><br/>
+            <input type=" number" name="credits" value="<%= credits %>"><br />
+            <input type="submit" value="Add" />
+        </form>
+    </form><br>
+
+    <!-- Moduleslink -->
+    <a href="/listModules">Modules</a><br><br>
+    <!-- home link -->
     <a href="/">Home</a>
 </body>
 
